@@ -1,20 +1,47 @@
-name,salon id,artist number,timing,off day,live,rating,target gender,links,marketing paid,availability,service category,artist image
-Siddharth,8178352246,2345425245,"[""11:00"",""21:00""]",,TRUE,5,Unisex,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",
-Shaan,8178352246,2251298997,"[""10:30"",""20:30""]",,TRUE,5,Unisex,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",
-Talib,8178352246,9831614834,"[""10:00"",""20:00""]",,TRUE,4.8,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",
-Sahil,8178352246,4999767910,"[""10:30"",""21:00""]",,TRUE,4.8,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",
-Anjali,8178352246,5881006978,"[""10:30"",""20:30""]",,TRUE,4.8,Unisex,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",
-Sejal,8178352246,7012210861,"[""11:00"",""21:00""]",,TRUE,4.8,Unisex,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",
-Rikesh,8178352246,4191249113,"[""11:00"",""21:00""]",,TRUE,4.8,Unisex,,FALSE,TRUE,"[""Spa"",""Hands & Feet"",""Nails""]",
-Lalit,8588872184,2029492640,"[""10:00"",""20:00""]","[""thursday""]",TRUE,5,Unisex,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",
-Kabir,8588872184,2510451556,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,5,Unisex,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",
-Faheem,8588872184,1259763513,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,4.5,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment"",""Waxing"",""Bleach""]",
-Manu,8588872184,6879507871,"[""10:00"",""20:00""]","[""thursday""]",TRUE,4.5,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment"",""Waxing"",""Bleach""]",
-Renu,8588872184,9848378537,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,4.5,Women,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",
-Deepak,8588872184,8691047583,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,4.5,Unisex,,FALSE,TRUE,"[""Spa"",""Hands & Feet"",""Nails""]",
-Shekhar,9669665006,8568137730,"[""10:00"",""20:00""]","[""thursday""]",TRUE,5,Unisex,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",
-Shweta,9669665006,9943784996,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,5,Women,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",
-Sunita,9669665006,2271974831,"[""10:00"",""20:00""]","[""thursday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment"",""Waxing"",""Bleach""]",
-Satender,9669665006,1286289306,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Spa"",""Hands & Feet"",""Nails""]",
-Arif,9669665006,2669879745,"[""10:00"",""20:00""]","[""monday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Spa"",""Hands & Feet"",""Nails""]",
-,,,,,,.,,,,,,
+name,salon id,artist number,timing,off day,live,rating,target gender,links,marketing paid,availability,service category,artist image,salon name
+Siddharth,8178352246,2345425245,"[""11:00"",""21:00""]",,TRUE,5,Unisex,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Triss Salon
+Shaan,8178352246,2251298997,"[""10:30"",""20:30""]",,TRUE,5,Unisex,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Triss Salon
+Talib,8178352246,9831614834,"[""10:00"",""20:00""]",,TRUE,4.8,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Triss Salon
+Sahil,8178352246,4999767910,"[""10:30"",""21:00""]",,TRUE,4.8,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Triss Salon
+Anjali,8178352246,5881006978,"[""10:30"",""20:30""]",,TRUE,4.8,Unisex,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",,Triss Salon
+Sejal,8178352246,7012210861,"[""11:00"",""21:00""]",,TRUE,4.8,Unisex,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",,Triss Salon
+Rikesh,8178352246,4191249113,"[""11:00"",""21:00""]",,TRUE,4.8,Unisex,,FALSE,TRUE,"[""Spa"",""Hands & Feet"",""Nails""]",,Triss Salon
+Lalit,8588872184,2029492640,"[""10:00"",""20:00""]","[""thursday""]",TRUE,5,Unisex,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Tangles Salon
+Kabir,8588872184,2510451556,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,5,Unisex,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Tangles Salon
+Faheem,8588872184,1259763513,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,4.5,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment"",""Waxing"",""Bleach""]",,Tangles Salon
+Manu,8588872184,6879507871,"[""10:00"",""20:00""]","[""thursday""]",TRUE,4.5,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment"",""Waxing"",""Bleach""]",,Tangles Salon
+Renu,8588872184,9848378537,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,4.5,Women,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",,Tangles Salon
+Deepak,8588872184,8691047583,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,4.5,Unisex,,FALSE,TRUE,"[""Spa"",""Hands & Feet"",""Nails""]",,Tangles Salon
+Shekhar,9669665006,8568137730,"[""10:00"",""20:00""]","[""thursday""]",TRUE,5,Unisex,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Tangles Salon
+Shweta,9669665006,9943784996,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,5,Women,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",,Tangles Salon
+Sunita,9669665006,2271974831,"[""10:00"",""20:00""]","[""thursday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment"",""Waxing"",""Bleach""]",,Tangles Salon
+Satender,9669665006,1286289306,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Spa"",""Hands & Feet"",""Nails""]",,Tangles Salon
+Arif,9669665006,2669879745,"[""10:00"",""20:00""]","[""monday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Spa"",""Hands & Feet"",""Nails""]",,Tangles Salon
+Farman,9990040194,9100000001,"[""10:00"",""21:00""]","[""thursday""]",TRUE,4.8,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Red Rose Unisex Salon
+Salman,9990040194,9100000002,"[""11:00"",""21:00""]","[""thursday""]",TRUE,4.8,Women,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Red Rose Unisex Salon
+Sohail,9990040194,9100000003,"[""09:00"",""21:00""]",,TRUE,4.8,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Red Rose Unisex Salon
+Seema,9990040194,9100000004,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,4.8,Women,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",,Red Rose Unisex Salon
+Mehak,9990040194,9100000005,"[""11:00"",""20:00""]","[""thursday""]",TRUE,4.8,Women,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",,Red Rose Unisex Salon
+Shiva,9990040194,9100000006,"[""10:00"",""20:00""]","[""monday""]",TRUE,4.8,Women,,FALSE,TRUE,"[""Spa"",""Hands & Feet"",""Nails""]",,Red Rose Unisex Salon
+Nargish,9990040194,9100000007,"[""10:00"",""20:00""]",,TRUE,4.8,Women,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Red Rose Unisex Salon
+Narveen,8800852302,9100000008,"[""10:00"",""19:00""]","[""wednesday""]",TRUE,4.8,Women,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Looks Salon
+Shariq,8800852302,9100000009,"[""11:00"",""20:00""]","[""monday""]",TRUE,4.8,Women,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Looks Salon
+Kuldeep,8800852302,9100000010,"[""10:00"",""19:00""]","[""tuesday""]",TRUE,4.8,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Looks Salon
+Kafeel,8800852302,9100000011,"[""11:00"",""20:00""]","[""thursday""]",TRUE,4.8,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Looks Salon
+Sonu,8800852302,9100000012,"[""11:00"",""20:00""]","[""wednesday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Spa"",""Hands & Feet"",""Nails""]",,Looks Salon
+Pinky,8800852302,9100000013,"[""11:00"",""20:00""]","[""thursday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",,Looks Salon
+Anas,8800852302,9100000014,"[""11:00"",""20:00""]",,TRUE,4.8,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Looks Salon
+Chandar,7827061110,9100000015,"[""10:00"",""20:00""]","[""monday""]",TRUE,4.8,Women,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Cut & Style Salon
+Shambhu,7827061110,9100000016,"[""10:30"",""20:30""]","[""wednesday""]",TRUE,4.8,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Cut & Style Salon
+Usha,7827061110,9100000017,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",,Cut & Style Salon
+Mun Mun,7827061110,9100000018,"[""10:00"",""20:00""]","[""thursday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",,Cut & Style Salon
+Kailash,7827061110,9100000019,"[""10:30"",""20:30""]","[""monday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Spa"",""Hands & Feet"",""Nails""]",,Cut & Style Salon
+Sunil,7827061110,9100000020,"[""10:00"",""20:00""]","[""tuesday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Spa"",""Hands & Feet"",""Nails""]",,Cut & Style Salon
+Ekta,7827061110,9100000021,"[""10:00"",""20:00""]","[""thursday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",,Cut & Style Salon
+Umar,7827061110,9100000022,"[""10:00"",""20:00""]","[""thursday""]",TRUE,4.8,Men,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Cut & Style Salon
+Vineet,7827061110,9100000023,"[""10:00"",""21:00""]","[""monday""]",TRUE,4.8,Women,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Cut & Style Salon
+Arshad,9911835599,9100000024,"[""10:00"",""21:00""]","[""thursday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Hair"",""Hair Colour"",""Hair Treatment""]",,Anita's Makeover
+Ashmin,9911835599,9100000025,"[""10:00"",""21:00""]","[""thursday""]",TRUE,4.8,Women,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails""]",,Anita's Makeover
+Muskan,9911835599,9100000026,"[""10:00"",""21:00""]","[""monday""]",TRUE,4.8,Women,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails"",""Hair"",""Hair Colour"",""Hair Treatment""]",,Anita's Makeover
+Meenakshi,9911835599,9100000027,"[""10:00"",""20:30""]","[""tuesday""]",TRUE,4.8,Women,,FALSE,TRUE,"[""Threading"",""Spa"",""Facial"",""Hands & Feet"",""Bleach"",""Waxing"",""Body"",""Makeup"",""Nails"",""Hair"",""Hair Colour"",""Hair Treatment""]",,Anita's Makeover
+Shiva,9911835599,9100000028,"[""10:00"",""21:00""]","[""monday""]",TRUE,4.8,Unisex,,FALSE,TRUE,"[""Spa"",""Hands & Feet"",""Nails""]",,Anita's Makeover

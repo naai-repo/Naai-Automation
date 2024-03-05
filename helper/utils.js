@@ -1,6 +1,7 @@
 const { default: mongoose } = require("mongoose");
 const Salon = require("../model/Salon");
 const Service = require("../model/Service");
+const Artist = require("../model/Artist");
 
 const getSalonInfo = (phoneNumber) => {
   return new Promise(async (resolve, reject) => {
@@ -137,6 +138,17 @@ const addArtistServices = (services) => {
   });
 };
 
+const findArtist = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try{
+      let artist = await Artist.findOne({phoneNumber: data["artist number"]});
+      resolve(artist);
+    }catch(err){
+      reject(err);
+    }
+  })
+}
+
 class CommonUtils{
   static getDouble(value){
     if(typeof value !== undefined){
@@ -151,4 +163,5 @@ module.exports = {
   findService,
   getArtistServices,
   addArtistServices,
+  findArtist
 };
