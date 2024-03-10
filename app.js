@@ -183,6 +183,9 @@ const deleteServiceRecord = async () => {
     let { salonId } = await getSalonInfo(data["salon id"]);
     if (salonId) {
       let service = await findService(salonId, data, 1000);
+      if (!service){
+        continue
+      }
       let artists = await Artist.find({services: {$elemMatch: {serviceId: service._id.toString()}}})
       for (let artist of artists) {
         artist.services = artist.services.filter(
