@@ -33,7 +33,8 @@ const createNewService = (salonId, data, variableArr, discount) => {
         avgTime: data["avg time"] / 30,
         cutPrice: Number(data["base price"]) || 0,
         basePrice:
-          Number(data["base price"]) - (Number(data["base price"]) * discount) / 100 || 0,
+          Number(data["base price"]) -
+            (Number(data["base price"]) * discount) / 100 || 0,
       });
       let newData = await service.save();
       resolve(newData);
@@ -121,12 +122,12 @@ const addArtistServices = (services) => {
         let obj = {
           serviceId: service._id,
           variables: [],
-          price: service.basePrice,
+          price: service.cutPrice,
         };
         if (service.variables.length > 0) {
           obj.variables = service.variables.map((variable) => ({
             variableId: variable._id,
-            price: variable.variablePrice,
+            price: variable.variableCutPrice,
           }));
         }
         artistServices.push(obj);
@@ -140,18 +141,50 @@ const addArtistServices = (services) => {
 
 const findArtist = (data) => {
   return new Promise(async (resolve, reject) => {
-    try{
-      let artist = await Artist.findOne({phoneNumber: data["artist number"]});
+    try {
+      let artist = await Artist.findOne({ phoneNumber: data["artist number"] });
       resolve(artist);
-    }catch(err){
+    } catch (err) {
       reject(err);
     }
-  })
+  });
+};
+
+const getServicesForArtist = (services) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let serviceDataPromiseArr = [];
+      for (let service of services) {
+        let serviceData = Service.findOne({ _id: service.serviceId});
+        serviceDataPromiseArr.push(serviceData);
+      }
+      let serviceDataArr = await Promise.all(serviceDataPromiseArr);
+      console.log("Service DAta arr: ", serviceDataArr, serviceDataArr.length);
+      let artistServices = [];
+      for (let service of serviceDataArr) {
+        let obj = {
+          serviceId: service._id,
+          variables: [],
+          price: service.cutPrice,
+        };
+        if (service.variables.length > 0) {
+          obj.variables = service.variables.map((variable) => ({
+            variableId: variable._id,
+            price: variable.variableCutPrice,
+          }));
+        }
+        artistServices.push(obj);
+      }
+      resolve(artistServices);
+    } catch (err) {
+      reject(err);
+    }
+  });
 }
 
-class CommonUtils{
-  static getDouble(value){
-    if(typeof value !== undefined){
+class CommonUtils {
+  static getDouble(value) {
+    if (typeof value !== undefined) {
       return parseFloat(value.toString()).toFixed(2);
     }
   }
@@ -163,5 +196,6 @@ module.exports = {
   findService,
   getArtistServices,
   addArtistServices,
-  findArtist
+  findArtist,
+  getServicesForArtist
 };

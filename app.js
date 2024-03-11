@@ -10,6 +10,7 @@ const {
   addArtistServices,
   getSalonInfo,
   findArtist,
+  getServicesForArtist,
 } = require("./helper/utils");
 const Service = require("./model/Service");
 
@@ -183,10 +184,12 @@ const deleteServiceRecord = async () => {
     let { salonId } = await getSalonInfo(data["salon id"]);
     if (salonId) {
       let service = await findService(salonId, data, 1000);
-      if (!service){
-        continue
+      if (!service) {
+        continue;
       }
-      let artists = await Artist.find({services: {$elemMatch: {serviceId: service._id.toString()}}})
+      let artists = await Artist.find({
+        services: { $elemMatch: { serviceId: service._id.toString() } },
+      });
       for (let artist of artists) {
         artist.services = artist.services.filter(
           (ele) => ele.serviceId !== service._id.toString()
@@ -194,7 +197,7 @@ const deleteServiceRecord = async () => {
         let temp = await artist.save();
         console.log(temp);
       }
-      let deletedService = await Service.deleteOne({_id: service._id});
+      let deletedService = await Service.deleteOne({ _id: service._id });
       console.log(deletedService);
     } else {
       console.log("salon Not Found!");
@@ -217,6 +220,22 @@ const removeServiceData = () => {
     });
 };
 
+// const correctArtistData = async () => {
+//   try {
+//     let artists = await Artist.find({});
+//     // let saveArtistsPromiseArr = [];
+//     let i=1;
+//     for (let artist of artists) {
+//       let artistService = await getServicesForArtist(artist.services);
+//       artist.services = artistService;
+//       await artist.save();
+//       console.log(artist.name, " Saved !", i++);
+//     }
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
 let dbUrl = "mongodb+srv://naaiadmn:naaiadmn@cluster0.rg1ncj1.mongodb.net/naai";
 // Connecting to MongoDB
 mongoose
@@ -231,6 +250,7 @@ mongoose
     // addServiceData();
     // addArtistData();
     // removeServiceData();
+    // correctArtistData();
   })
   .catch((err) => {
     console.log(err);
