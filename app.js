@@ -269,7 +269,6 @@ const findMinValForServices = async () => {
     console.log(err);
   }
 };
-
 let dbUrl = "mongodb+srv://naaiadmn:naaiadmn@cluster0.rg1ncj1.mongodb.net/naai";
 // Connecting to MongoDB
 mongoose
