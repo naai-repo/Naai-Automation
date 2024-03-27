@@ -173,6 +173,22 @@ const addArtistData = async () => {
           let temp = await artistData.save();
           console.log(temp);
         } else {
+          artist.name = data.name.toLowerCase();
+          artist.salonId = salonId;
+          artist.timing = {
+            start: JSON.parse(data.timing)[0],
+            end: JSON.parse(data.timing)[1],
+          };
+          artist.offDay = offDay;
+          artist.live = data.live.toLowerCase() === "true" ? true : false;
+          artist.rating= Number(data.rating);
+          artist.targetGender= gender;
+          artist.links= {
+              instagram: data.links,
+            };
+          artist.paid = data["marketing paid"] === "true" ? true : false;
+          artist.availability = data.availability.toLowerCase() === "true" ? true : false;
+          artist.location = salonLocation;
           artist.services = artistServices;
           let temp = await artist.save();
           console.log(temp);
@@ -281,7 +297,7 @@ mongoose
 
     // addSalonData();
     // addServiceData();
-    // addArtistData();
+    addArtistData();
     // removeServiceData();
     // correctArtistData();
     // findMinValForServices();
