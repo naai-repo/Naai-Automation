@@ -173,6 +173,16 @@ const addArtistData = async () => {
           let temp = await artistData.save();
           console.log(temp);
         } else {
+          let offDay = [];
+          if (data["off day"]) {
+            offDay = JSON.parse(data["off day"]);
+          }
+          let gender = "unisex";
+          if (data["target gender"].toLowerCase() === "men") {
+            gender = "male";
+          } else if (data["target gender"].toLowerCase() === "women") {
+            gender = "female";
+          }
           artist.name = data.name.toLowerCase();
           artist.salonId = salonId;
           artist.timing = {
@@ -297,7 +307,7 @@ mongoose
 
     // addSalonData();
     // addServiceData();
-    addArtistData();
+    // addArtistData();
     // removeServiceData();
     // correctArtistData();
     // findMinValForServices();
