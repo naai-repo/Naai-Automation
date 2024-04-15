@@ -11,6 +11,7 @@ const {
   getSalonInfo,
   findArtist,
   getServicesForArtist,
+  checkIfDuplicate,
 } = require("./helper/utils");
 const Service = require("./model/Service");
 
@@ -67,13 +68,14 @@ const createServiceRecord = async () => {
     let variablesArr = [];
     let isDuplicate = await checkIfDuplicate(data);
     if (isDuplicate) {
-      console.log("Bakchodi check kar CSV mein, Sahi se!");
-      break;
+      console.log("Duplicate Found!", data);
+      continue;
     }
+
     if (salonId) {
       if (data.variables !== "") {
         let service = await findService(salonId, data, 1000);
-        console.log(service);
+        // console.log(service);
         let variable = {
           variableType: data["variable type"].toLowerCase(),
           variableName: data.variables.toLowerCase(),
@@ -95,17 +97,31 @@ const createServiceRecord = async () => {
         } else {
           variablesArr = service.variables;
           variablesArr.push(variable);
+          service.variables = variablesArr;
+          service.avgTime = data["avg time"] / 30;
+          service.cutPrice = Number(data["base price"]) || 0;
+          service.basePrice = Number(data["base price"]) - (Number(data["base price"]) * discount) / 100 || 0;
           let newService = await service.save();
           console.log(newService);
         }
       } else {
-        let service = await createNewService(
-          salonId,
-          data,
-          variablesArr,
-          discount
-        );
-        console.log(service);
+        let service = await findService(salonId, data, 1000);
+        if(!service){
+          let newService = await createNewService(
+            salonId,
+            data,
+            variablesArr,
+            discount
+          );
+          console.log(newService);
+        }else{
+          service.avgTime = data["avg time"] / 30;
+          service.cutPrice = Number(data["base price"]) || 0;
+          service.basePrice = Number(data["base price"]) - (Number(data["base price"]) * discount) / 100 || 0;
+          let newService = await service.save();
+          console.log(newService);
+        }
+
       }
     } else {
       console.log("salon Not Found!");
@@ -306,7 +322,7 @@ mongoose
     console.log("Connected to Database!");
 
     // addSalonData();
-    // addServiceData();
+    addServiceData();
     // addArtistData();
     // removeServiceData();
     // correctArtistData();
