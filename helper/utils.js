@@ -182,44 +182,97 @@ const getServicesForArtist = (services) => {
   });
 };
 
+// const checkIfDuplicate = (data) => {
+//   return new Promise(async (resolve, reject) => {
+//     try {
+//       let salonData = await Salon.findOne({ phoneNumber: data["salon id"] });
+//       if (!salonData) {
+//         resolve(false);
+//       }
+//       let service = await Service.findOne({
+//         salonId: salonData._id,
+//         category: data.category.toLowerCase(),
+//         serviceTitle: data["service title"].toLowerCase(),
+//         targetGender: data["target gender"].toLowerCase(),
+//         description: data.description,
+//         // avgTime: Number(data["avg time"] / 30),
+//       });
+      
+//       if (service) { // first check
+//         if(data.variables !== ""){ // second check
+//           if(service.variables.length){
+//             for(let variable of service.variables){ // third check
+//               if(variable.variableType.toLowerCase() === data["variable type"].toLowerCase() && variable.variableName.toLowerCase() === data.variables.toLowerCase()){ // sub variable check
+//                 if(variable.variableCutPrice === Number(data["base price"]) && variable.variableTime === Number(data["avg time"] / 30)){
+//                   resolve(true);
+//                 }else{
+//                   resolve(false);
+//                 }
+//               }else{
+//                 resolve(false);
+//               }
+//             }
+//           }else{
+//             resolve(false);
+//           }
+//         }else{
+//           if(service.variables.length){
+//             resolve(true);
+//           }else{ 
+//             if(service.cutPrice === Number(data["base price"]) && service.avgTime === Number(data["avg time"] / 30)){ // Alpha check
+//               resolve(true);
+//             }else{ 
+//               resolve(false);
+//             }
+//           }
+//         }
+//       }else{
+//         resolve(false);
+//       }
+//     } catch (err) {
+//       reject(err);
+//     }
+//   });
+// };
+
 const checkIfDuplicate = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
-      let salonData = await Salon.findOne({ phoneNumber: data.salonId });
+      let salonData = await Salon.findOne({ phoneNumber: data["salon id"] });
       if (!salonData) {
         resolve(false);
       }
-      let service = Service.findOne({
-        salonId: salonData._id,
-        category: data.category.toLowerCase(),
-        serviceTitle: data["service title"].toLowerCase(),
-        targetGender: data["target gender"].toLowerCase(),
-        description: data.description,
-        avgTime: data["avg time"] / 30,
-      });
-      if (service) {
-        if(data.variables !== ""){
-          if(service.variables.length){
-            for(let variable of service.variables){
-              if(variable.variableType === data["variable type"] && variable.variableName === data.variables.toLowerCase() && variable.variableCutPrice === data["base price"]){
-                resolve(true);
-              }else{
-                resolve(false);
-              }
+      let service;
+      if(data.variables !== ""){
+        service = await Service.findOne({
+          salonId: salonData._id,
+          category: data.category.toLowerCase(),
+          serviceTitle: data["service title"].toLowerCase(),
+          targetGender: data["target gender"].toLowerCase(),
+          description: data.description,
+          variables: {
+            $elemMatch: {
+              variableType: data["variable type"].toLowerCase(),
+              variableName: data.variables.toLowerCase(),
+              variableCutPrice: Number(data["base price"]),
+              variableTime: Number(data["avg time"] / 30),
             }
-          }else{
-            resolve(false);
           }
-        }else{
-          if(service.variables.length){
-            resolve(true);
-          }else{
-            if(service.cutPrice === data["base price"]){
-              resolve(true);
-            }
-            resolve(false);
-          }
-        }
+        });
+      }else{
+        service = await Service.findOne({
+          salonId: salonData._id,
+          category: data.category.toLowerCase(),
+          serviceTitle: data["service title"].toLowerCase(),
+          targetGender: data["target gender"].toLowerCase(),
+          description: data.description,
+          cutPrice: Number(data["base price"]),
+          avgTime: Number(data["avg time"] / 30),
+        });
+      }
+
+      if(service){
+        resolve(true);
       }else{
         resolve(false);
       }
