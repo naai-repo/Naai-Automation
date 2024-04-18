@@ -1,7 +1,8 @@
 category,target gender,service title,variable type,variables,description,avg time,base price,salon id,
 Threading,Male,Ears,,,,30,100,7827284935,Mak Luxury Salon
-Threading,Male,Ears,,,,30,30,7827284935,Mak Luxury Salon
-Threading,Male,Sides,ers,gfgfbbv,,30,40,7827284935,Mak Luxury Salon
+Threading,Male,Ears,,,,30,50,7827284935,Mak Luxury Salon
+Threading,Male,Sides,ers,gfgfbbv,,30,450,7827284935,Mak Luxury Salon
+Threading,Male,Sides,ers,gfgfbbv123,,30,450,7827284935,Mak Luxury Salon
 Threading,Male,Sides,ers,ergregwerg,,30,60,7827284935,Mak Luxury Salon
 Hair Colour,Male,Colour Touch up,,,,60,1500,7827284935,Mak Luxury Salon
 Hair Colour,Male,Ammonia Free Colour Touch up,,,,60,2000,7827284935,Mak Luxury Salon
@@ -9,5 +10,5 @@ Hair Colour,Male,Beard Colour,Your Beard Density,normal,,60,500,7827284935,Mak L
 Hair Colour,Male,Beard Colour,Your Beard Density,Heavy,,60,700,7827284935,Mak Luxury Salon
 Hair Colour,Male,Global Hair Colour / Highlights,Your Hair Length,till neck,,60,2000,7827284935,Mak Luxury Salon
 Hair Colour,Male,Global Hair Colour / Highlights,Your Hair Length,neck to shoulder,,60,3500,7827284935,Mak Luxury Salon
-Threading,Male,Ears,,,,30,30,7827284935,Mak Luxury Salon
+Threading,Male,Ears,abc,abc,,30,40,7827284935,Mak Luxury Salon
 Threading,Male,sgdfbbfhfgh,,,,30,30,7827284935,Mak Luxury Salon
