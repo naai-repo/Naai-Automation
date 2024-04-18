@@ -96,6 +96,7 @@ const createServiceRecord = async () => {
           console.log(newService);
         } else {
           variablesArr = service.variables;
+          variablesArr = variablesArr.filter(e => e.variableName !== variable.variableName);
           variablesArr.push(variable);
           service.variables = variablesArr;
           service.avgTime = data["avg time"] / 30;
