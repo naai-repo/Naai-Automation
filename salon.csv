@@ -1,11 +1,10 @@
-name,salon type,discount,address,location,timing,closed on,owner,phone number,Number status,rating,live,marketing paid,listing type,2893624259
+name,salon type,discount,address,location,timing,closed on,owner,phone number,Number status,rating,live,marketing paid,listing type,9414908917
 Looks Salon,Unisex,20,"A-15, Acharya Niketan Market, Mayur Vihar, Phase-1, New Delhi-91","[28.607334,77.2947476]","[""10:00"",""21:30""]",,Vikram Taneja,8800852302,,5,TRUE,FALSE,,
 Anita's Makeover,Unisex,20,"Huda Market, SCO 123, First & Second, Sector 46, Gurugram, Haryana 122022","[28.4342636,77.0564148]","[""10:00"",""21:00""]",,Geetanjal,9911835599,,5,TRUE,FALSE,,
-Red Rose Unisex Salon,Unisex,25,"5 First Floor, Block A 18, shop No F-4, Market, Acharya Niketan, Mayur Vihar, New Delhi, Delhi 110091","[28.6075686,77.2952335]","[""09:00"",""21:00""]",,Shahid,9990040194,,5,TRUE,FALSE,,
-Dream Derma Unisex Salon,Unisex,25,"Above 24SEVEN, D-38, 1st Floor, Acharya Niketan, Mayur Vihar, New Delhi, Delhi 110091","[28.6082378,77.2927666]","[""10:00"",""21:00""]",,Rajiv,7388411500,,5,TRUE,FALSE,,
+Red Rose Unisex Salon,Unisex,25,"5 First Floor, Block A 18, shop No F-4, Market, Acharya Niketan, Mayur Vihar, New Delhi, Delhi 110091","[28.6075686,77.2952335]","[""09:00"",""21:00""]",,Shahid,9990040194,,5,FALSE,FALSE,,
 Cut & Style Salon,Unisex,20,"Lower Ground, Mahabir Complex C Block Market, below Easy Day, Ardee City, Sector 52, Gurugram, Haryana 122003","[28.4416091,77.0760858]","[""10:00"",""20:30""]",,Meenakshi,7827061110,,5,TRUE,FALSE,,
-VL Unisex Salon,Unisex,25,"Uper ground floor, AVA Court, shop 3 & 4, Chestnut St, Malibu Town, Sector 47, Gurugram, Fatehpur, Haryana 122008","[28.4200369,77.0447831]","[""10:00"",""20:30""]",,Saloni,9811956350,,5,TRUE,FALSE,,
-The Blunt Salon,Unisex,20,"C1-2775, Block C, Sushant Lok Phase I, Sector 43, Gurugram, Haryana 122002","[28.4501407,77.0861432]","[""10:00"",""21:00""]",,Amzad,9971883185,,5,TRUE,FALSE,,
+VL Unisex Salon,Unisex,25,"Uper ground floor, AVA Court, shop 3 & 4, Chestnut St, Malibu Town, Sector 47, Gurugram, Fatehpur, Haryana 122008","[28.4200369,77.0447831]","[""10:00"",""20:30""]",tuesday,Saloni,9811956350,,5,TRUE,FALSE,,
+The Blunt Salon,Unisex,20,"C1-2775, Block C, Sushant Lok Phase I, Sector 43, Gurugram, Haryana 122002","[28.4501407,77.0861432]","[""10:00"",""21:00""]",,Amzad,9971883185,,5,FALSE,FALSE,,
 Tangles Salon,Unisex,25,"Unitech Club Patio, E-Block, Block E, South City I, Sector 41, Gurugram, Haryana 122001","[28.4584138,77.0639458]","[""10:00"",""20:00""]",,Sandeep,9669665006,,5,TRUE,FALSE,,
 Tangles Salon,Unisex,25,"3rd Floor, AVA Court, Sohna - Gurgaon Rd, near Park Hospital Road, Malibu Town, Sector 47, Gurugram, Fatehpur, Haryana 122018","[28.4199269,77.0452032]","[""10:00"",""20:00""]",,Sandeep,8588872184,,5,TRUE,FALSE,,
 Triss Salon,Unisex,25,"Shop No - BG48, Ground Floor, Element One Mall, 49, and, near Haldiram's, Sector 47, Gurugram, Fatehpur, Haryana 122018","[28.4200756,77.0480768]","[""10:00"",""21:00""]",,Devanshi,8178352246,,5,TRUE,FALSE,,
@@ -15,4 +14,5 @@ Ayna Salon Prashant Vihar,Unisex,10,"A-1/20 prashant vihar rohini delhi, New Del
 MATEO SALON,Unisex,25,"B-11, 1st floor, Prashant Vihar, Sector 14, Rohini, Delhi, 110085","[28.7105237,77.1326951]","[""10:30"",""20:30""]",,Pulkit,9899616494,,5,TRUE,FALSE,,
 Unique Galaxy Salon,Unisex,25,"G-32, PVR Mall, Prashant Vihar, Sector-14, Rohini, Delhi, 110085","[28.7125826,77.1358739]","[""10:00"",""21:00""]",,Gunjan,9871913533,,5,TRUE,FALSE,,
 Mak Luxury Salon,Unisex,25,"Ground Floor, Fun City Mall, PVR Prashant Vihar Complex, Prashant Vihar, Delhi - 110085","[28.7122625,77.1355004]","[""10:00"",""21:00""]",,Preeti,7827284935,,5,TRUE,FALSE,,
-Sohail's Unisex Salon,Unisex,25,"1st floor, A76, Prashant Vihar Rd, B Block, Prashant Vihar, Sector 14, Rohini, Delhi, 110085","[28.7104395,77.1328093]","[""10:30"",""20:30""]",,Sohail,9999616786,,5,TRUE,FALSE,,
+Sohail's Unisex Salon,Unisex,25,"1st floor, A76, Prashant Vihar Rd, B Block, Prashant Vihar, Sector 14, Rohini, Delhi, 110085","[28.7104395,77.1328093]","[""10:30"",""20:30""]",,Sohail,9999616786,,5,FALSE,FALSE,,
+Maxx Salon,Unisex,25,"Aditya Arcade Shop No G-7 ,Ground Floor, Preet Vihar, Delhi, 110092","[28.6383483,77.2946588]","[""09:00"",""21:00""]",tuesday,Naeem,9811824707,,5,TRUE,FALSE,,

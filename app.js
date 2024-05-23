@@ -26,31 +26,58 @@ const addSalonData = () => {
       .on("data", async (data) => {
         let time = JSON.parse(data.timing);
         let location = JSON.parse(data.location);
-        let tempData = new Salon({
-          address: data.address,
-          location: {
+        let salon = await Salon.findOne({ phoneNumber: data["phone number"] });
+        if (!salon) {
+          let tempData = new Salon({
+            address: data.address,
+            location: {
+              type: "Point",
+              coordinates: location.reverse(),
+            },
+            name: data.name,
+            salonType: data["salon type"],
+            phoneNumber: data["phone number"],
+            timing: {
+              closing: time[1],
+              opening: time[0],
+            },
+            discount: data.discount,
+            closedOn: data["closed on"] === "" ? "none" : data["closed on"],
+            rating: Number(data.rating),
+            live: data.live === "TRUE",
+            paid: data.paid === "TRUE",
+            owner: data.owner,
+          });
+          salonId = tempData._id;
+          salonName = tempData.name;
+          data._id = tempData._id;
+          let temp = await tempData.save();
+          console.log(tempData);
+        } else {
+          salon.address = data.address;
+          salon.location = {
             type: "Point",
             coordinates: location.reverse(),
-          },
-          name: data.name,
-          salonType: data["salon type"],
-          phoneNumber: data["phone number"],
-          timing: {
+          };
+          salon.name = data.name;
+          salon.salonType = data["salon type"];
+          salon.phoneNumber = data["phone number"];
+          salon.timing = {
             closing: time[1],
             opening: time[0],
-          },
-          discount: data.discount,
-          closedOn: data["closed on"] === "" ? "none" : data["closed on"],
-          rating: Number(data.rating),
-          live: data.live === "TRUE",
-          paid: data.paid === "TRUE",
-          owner: data.owner,
-        });
-        salonId = tempData._id;
-        salonName = tempData.name;
-        data._id = tempData._id;
-        let temp = await tempData.save();
-        console.log(tempData);
+          };
+          salon.discount = data.discount;
+          salon.closedOn =
+            data["closed on"] === "" ? "none" : data["closed on"];
+          salon.rating = Number(data.rating);
+          salon.live = data.live === "TRUE";
+          salon.paid = data.paid === "TRUE";
+          salon.owner = data.owner;
+          let temp = await salon.save();
+          salonId = salon._id;
+          salonName = salon.name;
+          console.log(temp);
+        }
       })
       .on("end", () => {
         resolve({
@@ -96,18 +123,22 @@ const createServiceRecord = async () => {
           console.log(newService);
         } else {
           variablesArr = service.variables;
-          variablesArr = variablesArr.filter(e => e.variableName !== variable.variableName);
+          variablesArr = variablesArr.filter(
+            (e) => e.variableName !== variable.variableName
+          );
           variablesArr.push(variable);
           service.variables = variablesArr;
           service.avgTime = data["avg time"] / 30;
           service.cutPrice = Number(data["base price"]) || 0;
-          service.basePrice = Number(data["base price"]) - (Number(data["base price"]) * discount) / 100 || 0;
+          service.basePrice =
+            Number(data["base price"]) -
+              (Number(data["base price"]) * discount) / 100 || 0;
           let newService = await service.save();
           console.log(newService);
         }
       } else {
         let service = await findService(salonId, data, 1000);
-        if(!service){
+        if (!service) {
           let newService = await createNewService(
             salonId,
             data,
@@ -115,14 +146,15 @@ const createServiceRecord = async () => {
             discount
           );
           console.log(newService);
-        }else{
+        } else {
           service.avgTime = data["avg time"] / 30;
           service.cutPrice = Number(data["base price"]) || 0;
-          service.basePrice = Number(data["base price"]) - (Number(data["base price"]) * discount) / 100 || 0;
+          service.basePrice =
+            Number(data["base price"]) -
+              (Number(data["base price"]) * discount) / 100 || 0;
           let newService = await service.save();
           console.log(newService);
         }
-
       }
     } else {
       console.log("salon Not Found!");
@@ -208,13 +240,14 @@ const addArtistData = async () => {
           };
           artist.offDay = offDay;
           artist.live = data.live.toLowerCase() === "true" ? true : false;
-          artist.rating= Number(data.rating);
-          artist.targetGender= gender;
-          artist.links= {
-              instagram: data.links,
-            };
+          artist.rating = Number(data.rating);
+          artist.targetGender = gender;
+          artist.links = {
+            instagram: data.links,
+          };
           artist.paid = data["marketing paid"] === "true" ? true : false;
-          artist.availability = data.availability.toLowerCase() === "true" ? true : false;
+          artist.availability =
+            data.availability.toLowerCase() === "true" ? true : false;
           artist.location = salonLocation;
           artist.services = artistServices;
           let temp = await artist.save();
@@ -322,8 +355,8 @@ mongoose
   .then(() => {
     console.log("Connected to Database!");
 
-    // addSalonData();
-    addServiceData();
+    addSalonData();
+    // addServiceData();
     // addArtistData();
     // removeServiceData();
     // correctArtistData();
