@@ -14,6 +14,7 @@ const {
   checkIfDuplicate,
 } = require("./helper/utils");
 const Service = require("./model/Service");
+const Partner = require("./model/Partner");
 
 let rows = [];
 // Parsing the Data from salon.csv and saving to database
@@ -172,7 +173,7 @@ const addServiceData = () => {
       }
     })
     .on("end", () => {
-      createServiceRecord();
+      createPartnerRecord();
     });
 };
 
@@ -345,6 +346,47 @@ const findMinValForServices = async () => {
     console.log(err);
   }
 };
+
+const createPartnerRecord = async (partnerArr) => {
+  for (let data of partnerArr) {
+    let partnerData = await Partner.findOne({ phoneNumber: data.phoneNumber });
+    let salonData = await Salon.findOne({phoneNumber: data.salonId});
+    if(!salonData){
+      console.log("Salon Not Found !", data);
+      continue;
+    }
+    if(partnerData){
+      continue;
+    }
+    let partner = new Partner({
+      phoneNumber: data.phoneNumber,
+      name: data.name,
+      salonId: salonData._id,
+      admin: data.phoneNumber.toString() === salonData.phoneNumber.toString(),
+    });
+    await partner.save();
+    console.log("Partner Added !", partner.phoneNumber);
+  }
+  console.log("Partners Finished !");
+};
+
+const addPartnerData = () => {
+  let partnerArr = [];
+  fs.createReadStream("partner.csv")
+    .pipe(csv({}))
+    .on("data", async (data) => {
+      partnerArr.push({
+        phoneNumber: data["Phone Number"],
+        name: data["Name"],
+        salonId: data["Salon Number"]
+      });
+    })
+    .on("end", () => {
+      createPartnerRecord(partnerArr);
+    });
+};
+
+
 let dbUrl = "mongodb+srv://naaiadmn:naaiadmn@cluster0.rg1ncj1.mongodb.net/naai";
 // Connecting to MongoDB
 mongoose
@@ -354,8 +396,8 @@ mongoose
   })
   .then(() => {
     console.log("Connected to Database!");
-
-    addSalonData();
+    addPartnerData();
+    // addSalonData();
     // addServiceData();
     // addArtistData();
     // removeServiceData();
